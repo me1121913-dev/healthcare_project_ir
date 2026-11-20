@@ -1,0 +1,140 @@
+==========================================================================================\nHEALTHCARE INFORMATION STORAGE AND RETRIEVAL PROJECT\nSpark Positional Index, Retrieval and Ranking\n==========================================================================================\n
+SPARK EXECUTION\nSpark application: local[*]\nDocuments processed: 10\nUnique terms: 28\n
+
+ASSIGNED DATASET\nd1: patient care\nd2: patient safety needs careful monitoring\nd3: medical research improves treatment\nd4: medical treatment supports patient recovery\nd5: patient care patient safety medical research patient care\nd6: hospital staff provide patient care\nd7: clinical teams support patient recovery through treatment\nd8: medical research uses patient records and clinical data\nd9: patient monitoring patient monitoring supports care\nd10: health information systems improve patient safety medical records clinical services\n
+
+PART A — POSITIONAL INDEX (1-BASED POSITIONS)\nand              d8: 6\ncare             d1: 2; d5: 2, 8; d6: 5; d9: 6\ncareful          d2: 4\nclinical         d7: 1; d8: 7; d10: 9\ndata             d8: 8\nhealth           d10: 1\nhospital         d6: 1\nimprove          d10: 4\nimproves         d3: 3\ninformation      d10: 2\nmedical          d3: 1; d4: 1; d5: 5; d8: 1; d10: 7\nmonitoring       d2: 5; d9: 2, 4\nneeds            d2: 3\npatient          d1: 1; d2: 1; d4: 4; d5: 1, 3, 7; d6: 4; d7: 4; d8: 4; d9: 1, 3; d10: 5\nprovide          d6: 3\nrecords          d8: 5; d10: 8\nrecovery         d4: 5; d7: 5\nresearch         d3: 2; d5: 6; d8: 2\nsafety           d2: 2; d5: 4; d10: 6\nservices         d10: 10\nstaff            d6: 2\nsupport          d7: 3\nsupports         d4: 3; d9: 5\nsystems          d10: 3\nteams            d7: 2\nthrough          d7: 6\ntreatment        d3: 4; d4: 2; d7: 7\nuses             d8: 3\n
+RAW TERM FREQUENCY (TF) MATRIX
+Term            d1       d2       d3       d4       d5       d6       d7       d8       d9       d10      
+and             0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+care            1.0000   0.0000   0.0000   0.0000   2.0000   1.0000   0.0000   0.0000   1.0000   0.0000   
+careful         0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+clinical        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   1.0000   0.0000   1.0000   
+data            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+health          0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+hospital        0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+improve         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+improves        0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+information     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+medical         0.0000   0.0000   1.0000   1.0000   1.0000   0.0000   0.0000   1.0000   0.0000   1.0000   
+monitoring      0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   2.0000   0.0000   
+needs           0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+patient         1.0000   1.0000   0.0000   1.0000   3.0000   1.0000   1.0000   1.0000   2.0000   1.0000   
+provide         0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+records         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   1.0000   
+recovery        0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+research        0.0000   0.0000   1.0000   0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+safety          0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+services        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+staff           0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+support         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+supports        0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   
+systems         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+teams           0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+through         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+treatment       0.0000   0.0000   1.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+uses            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   \n
+WEIGHTED TF MATRIX: 1 + log10(TF)
+Term            d1       d2       d3       d4       d5       d6       d7       d8       d9       d10      
+and             0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+care            1.0000   0.0000   0.0000   0.0000   1.3010   1.0000   0.0000   0.0000   1.0000   0.0000   
+careful         0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+clinical        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   1.0000   0.0000   1.0000   
+data            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+health          0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+hospital        0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+improve         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+improves        0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+information     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+medical         0.0000   0.0000   1.0000   1.0000   1.0000   0.0000   0.0000   1.0000   0.0000   1.0000   
+monitoring      0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.3010   0.0000   
+needs           0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+patient         1.0000   1.0000   0.0000   1.0000   1.4771   1.0000   1.0000   1.0000   1.3010   1.0000   
+provide         0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+records         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   1.0000   
+recovery        0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+research        0.0000   0.0000   1.0000   0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+safety          0.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+services        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+staff           0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+support         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+supports        0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   
+systems         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+teams           0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+through         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+treatment       0.0000   0.0000   1.0000   1.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+uses            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   \n
+
+DOCUMENT FREQUENCY (DF) AND INVERSE DOCUMENT FREQUENCY (IDF)\nTerm             DF       IDF       \nand              1        1.0000    \ncare             4        0.3979    \ncareful          1        1.0000    \nclinical         3        0.5229    \ndata             1        1.0000    \nhealth           1        1.0000    \nhospital         1        1.0000    \nimprove          1        1.0000    \nimproves         1        1.0000    \ninformation      1        1.0000    \nmedical          5        0.3010    \nmonitoring       2        0.6990    \nneeds            1        1.0000    \npatient          9        0.0458    \nprovide          1        1.0000    \nrecords          2        0.6990    \nrecovery         2        0.6990    \nresearch         3        0.5229    \nsafety           3        0.5229    \nservices         1        1.0000    \nstaff            1        1.0000    \nsupport          1        1.0000    \nsupports         2        0.6990    \nsystems          1        1.0000    \nteams            1        1.0000    \nthrough          1        1.0000    \ntreatment        3        0.5229    \nuses             1        1.0000    \n
+TF-IDF MATRIX
+Term            d1       d2       d3       d4       d5       d6       d7       d8       d9       d10      
+and             0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+care            0.3979   0.0000   0.0000   0.0000   0.5177   0.3979   0.0000   0.0000   0.3979   0.0000   
+careful         0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+clinical        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.5229   0.5229   0.0000   0.5229   
+data            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   
+health          0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+hospital        0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+improve         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+improves        0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+information     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+medical         0.0000   0.0000   0.3010   0.3010   0.3010   0.0000   0.0000   0.3010   0.0000   0.3010   
+monitoring      0.0000   0.6990   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.9094   0.0000   
+needs           0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+patient         0.0458   0.0458   0.0000   0.0458   0.0676   0.0458   0.0458   0.0458   0.0595   0.0458   
+provide         0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+records         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.6990   0.0000   0.6990   
+recovery        0.0000   0.0000   0.0000   0.6990   0.0000   0.0000   0.6990   0.0000   0.0000   0.0000   
+research        0.0000   0.0000   0.5229   0.0000   0.5229   0.0000   0.0000   0.5229   0.0000   0.0000   
+safety          0.0000   0.5229   0.0000   0.0000   0.5229   0.0000   0.0000   0.0000   0.0000   0.5229   
+services        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+staff           0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   0.0000   
+support         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+supports        0.0000   0.0000   0.0000   0.6990   0.0000   0.0000   0.0000   0.0000   0.6990   0.0000   
+systems         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   
+teams           0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+through         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   0.0000   
+treatment       0.0000   0.0000   0.5229   0.5229   0.0000   0.0000   0.5229   0.0000   0.0000   0.0000   
+uses            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000   0.0000   0.0000   \n
+
+DOCUMENT VECTOR LENGTHS (L2)\nd1: 0.400562\nd2: 1.662545\nd3: 1.279618\nd4: 1.158979\nd5: 0.953959\nd6: 1.777765\nd7: 2.009342\nd8: 2.031767\nd9: 1.215497\nd10: 2.475495\n
+NORMALIZED TF-IDF MATRIX
+Term            d1       d2       d3       d4       d5       d6       d7       d8       d9       d10      
+and             0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4922   0.0000   0.0000   
+care            0.9935   0.0000   0.0000   0.0000   0.5427   0.2238   0.0000   0.0000   0.3274   0.0000   
+careful         0.0000   0.6015   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+clinical        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.2602   0.2574   0.0000   0.2112   
+data            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4922   0.0000   0.0000   
+health          0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4040   
+hospital        0.0000   0.0000   0.0000   0.0000   0.0000   0.5625   0.0000   0.0000   0.0000   0.0000   
+improve         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4040   
+improves        0.0000   0.0000   0.7815   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+information     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4040   
+medical         0.0000   0.0000   0.2352   0.2597   0.3156   0.0000   0.0000   0.1482   0.0000   0.1216   
+monitoring      0.0000   0.4204   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.7482   0.0000   
+needs           0.0000   0.6015   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   
+patient         0.1142   0.0275   0.0000   0.0395   0.0709   0.0257   0.0228   0.0225   0.0490   0.0185   
+provide         0.0000   0.0000   0.0000   0.0000   0.0000   0.5625   0.0000   0.0000   0.0000   0.0000   
+records         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.3440   0.0000   0.2824   
+recovery        0.0000   0.0000   0.0000   0.6031   0.0000   0.0000   0.3479   0.0000   0.0000   0.0000   
+research        0.0000   0.0000   0.4086   0.0000   0.5481   0.0000   0.0000   0.2574   0.0000   0.0000   
+safety          0.0000   0.3145   0.0000   0.0000   0.5481   0.0000   0.0000   0.0000   0.0000   0.2112   
+services        0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4040   
+staff           0.0000   0.0000   0.0000   0.0000   0.0000   0.5625   0.0000   0.0000   0.0000   0.0000   
+support         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4977   0.0000   0.0000   0.0000   
+supports        0.0000   0.0000   0.0000   0.6031   0.0000   0.0000   0.0000   0.0000   0.5750   0.0000   
+systems         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4040   
+teams           0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4977   0.0000   0.0000   0.0000   
+through         0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4977   0.0000   0.0000   0.0000   
+treatment       0.0000   0.0000   0.4086   0.4512   0.0000   0.0000   0.2602   0.0000   0.0000   0.0000   
+uses            0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.4922   0.0000   0.0000   \n
+
+PART B — PHRASE QUERIES\n
+Phrase query: 'patient care'\nd1: starting positions [1]; token ranges 1-2\nd5: starting positions [1, 7]; token ranges 1-2, 7-8\nd6: starting positions [4]; token ranges 4-5\nQuery vector length: 0.400562\nQuery term weights:\n  patient: query TF-IDF=0.0458, normalized=0.1142\n  care: query TF-IDF=0.3979, normalized=0.9935\nSimilarity scores (matching documents):\n  d1: 1.0000\n  d5: 0.5473\n  d6: 0.2253\nRanking (highest first): d1 > d5 > d6\n
+Phrase query: 'medical research'\nd3: starting positions [1]; token ranges 1-2\nd5: starting positions [5]; token ranges 5-6\nd8: starting positions [1]; token ranges 1-2\nQuery vector length: 0.603342\nQuery term weights:\n  medical: query TF-IDF=0.3010, normalized=0.4989\n  research: query TF-IDF=0.5229, normalized=0.8666\nSimilarity scores (matching documents):\n  d3: 0.4715\n  d5: 0.6325\n  d8: 0.2970\nRanking (highest first): d5 > d3 > d8\n
+
+BOOLEAN AND: patient care AND medical research\nMatching documents: d5\nCombined query vector length: 0.724204\nd5: similarity=0.8296\nRanking: d5\n
+
+BOOLEAN AND NOT: patient care AND NOT medical research\nMatching documents: d1, d6\nd1: similarity=1.0000\nd6: similarity=0.2253\nRanking: d1 > d6\n
+
+CALCULATION CONVENTIONS\nN = 10 documents.\nRaw TF = number of occurrences of a term in a document.\nDF = number of documents containing the term.\nIDF = log10(N / DF).\nWeighted TF = 1 + log10(Raw TF) when Raw TF > 0; otherwise 0.\nTF-IDF = Weighted TF × IDF.\nDocument vector length = sqrt(sum of squared TF-IDF weights).\nNormalized TF-IDF = TF-IDF / document vector length.\nQuery vectors use the same weighted TF and collection IDF, then L2 normalization.\nSimilarity = dot product of normalized query and normalized document vectors.\nPhrase matching is exact and contiguous using the positional index.\nAND = intersection of phrase match sets.\nAND NOT = first phrase match set minus second phrase match set.\n\n\nCONCEPTUAL EXPLANATIONS FOR THE REPORT\n1. Positional information stores each term's exact token locations. A phrase matches only when its terms occur in consecutive positions in the same document.\n2. DF counts how many documents contain a term. IDF = log10(N/DF), so a term found in many documents receives a lower IDF, while a rarer term receives a higher IDF.\n3. Repeated occurrences increase raw TF. Weighted TF uses 1 + log10(TF), which increases the weight while reducing the effect of very frequent repetition.\n4. TF-IDF combines within-document term frequency with collection-wide rarity, giving more importance to terms that characterize a document.\n5. L2 normalization divides each document vector by its length. This reduces the influence of document length and makes cosine similarity comparable.\n6. Similarity is the dot product of normalized query and document vectors. Higher scores indicate a closer match; results are ranked from highest to lowest.\n7. AND returns documents that contain both exact phrases. AND NOT returns documents containing the first phrase while excluding documents containing the second phrase.
